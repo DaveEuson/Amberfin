@@ -1,0 +1,251 @@
+[{
+	"className": "row",
+	"fieldGroup": [	{
+		"className": "col-xs-3",
+		"template": "<img src=\"/WorkflowEngineService/server/images/logo.svg\">"
+	},
+	{
+		"className": "col-xs-9",
+		"template": "<h1>HTML formatted text</h1>"
+	},
+	{
+		"className": "row",
+		"template": " "
+	},
+	{
+		"key": "text",
+		"type": "input",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "Free Text Entry",
+			"type": "text"
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "radio",
+		"type": "radio",
+		"defaultValue": "r1",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "Radio Buttons",
+			"options": [{
+				"name": "Radio 1",
+				"value": "r1"
+			},
+			{
+				"name": "Radio 2",
+				"value": "r2"
+			}]
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "multiCheckbox",
+		"type": "multiCheckbox",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "Multiple Check Boxes",
+			"options": [{
+				"name": "Checkbox1",
+				"value": "c1"
+			},
+			{
+				"name": "Checkbox 2",
+				"value": "c2"
+			}]
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "select",
+		"type": "select",
+		"defaultValue": "1",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "Select An Option",
+			"notNull": true,
+			"options": [{
+				"name": "Option 1",
+				"value": "1"
+			},
+			{
+				"name": "Option 2",
+				"value": "2"
+			},
+			{
+				"name": "Option 3",
+				"value": "3"
+			},
+			{
+				"name": "Option 4",
+				"value": "4"
+			},
+			{
+				"name": "Option 5",
+				"value": "5"
+			}]
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "pattern",
+		"type": "input",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "Fixed Formatting eg. numeric characters only, start with a 0 and contain 5 to 12 characters",
+			"type": "text",
+			"pattern": "(\\(0\\)\\s+|0){1}\\d{4,11}(\\s+\\d{4,11})*"
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "date",
+		"type": "input",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "date",
+			"type": "date"
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "time",
+		"type": "input",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "time",
+			"type": "time"
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "number",
+		"type": "input",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "number",
+			"type": "number"
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "url",
+		"type": "input",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "url",
+			"type": "url"
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "email",
+		"type": "input",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "email",
+			"type": "email"
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "datePicker",
+		"type": "datePicker",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "Date Picker",
+			"type": "text",
+			"datepickerPopup": "dd-MMMM-yyyy",
+			"datepickerOptions": {
+				"format": "dd-MM-yyyy"
+			},
+			"formattedOutput": {
+				"format": "yyyy/MM/dd HH:mm:ss",
+				"key": "formattedDate"
+			}
+		},
+		"expressionProperties": {
+			"templateOptions.disabled": "model.checkbox"
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"key": "filepath",
+		"type": "fileControl",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "Filename",
+			"placeholder": "Enter file path"
+		},
+		"validation": {
+			"show": true
+		}
+	},
+	{
+		"type": "checkbox",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "Checkbox with tooltip.",
+			"invertLogic": false,
+			"clipsKey": "files",
+			"clearOnSubmit": false
+		},
+		"ngModelElAttrs": {
+			"uib-tooltip": "Launch a single Workflow per Clip",
+			"uib-tooltip-placement": "right"
+		}
+	},
+	{
+		"key": "collectionType",
+		"type": "input",
+		"className": "col-xs-4",
+		"templateOptions": {
+			"label": "Collection Type",
+			"clearOnSubmit": false
+		},
+		"ngModelElAttrs": {
+			"ng-readonly": "true"
+		}
+	},
+	{
+		"key": "files",
+		"type": "folderControl",
+		"className": "col-xs-12",
+		"templateOptions": {
+			"label": "Media Clips",
+			"placeholder": "Click to select...",
+			"collectionTypeField": "collectionType",
+			"clearOnSubmit": "clearSelection"
+		},
+		"validation": {
+			"show": true
+		},
+		"data": {
+			"metadataKey": "metadataFiles",
+			"cardMetadataKey": "cardMetadata"
+		}
+	}]
+}]
